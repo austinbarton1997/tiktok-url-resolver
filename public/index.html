@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TikTok URL Resolver</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>TikTok URL Resolver</h1>
+    <p>Your friend ( David ) Cant watch a tiktok? Paste the link in here.</p>
+    <div class="input-container">
+      <input type="text" id="shortUrl" placeholder="Paste TikTok URL">
+      <button id="resolveBtn">Convert URL</button>
+    </div>
+    <div id="result-container" class="hidden">
+      <a id="resolvedUrl" class="hidden" target="_blank"></a>
+      <button id="copyBtn" class="hidden">Copy to Clipboard</button>
+    </div>
+    <footer>
+      Made with <span style="color: #e74c3c;">♥</span> by Austin Barton. 
+      <br>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
