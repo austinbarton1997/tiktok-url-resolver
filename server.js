@@ -1,11 +1,21 @@
 import express from 'express';
 import fetch from 'node-fetch';
+import cors from 'cors';
 
 const app = express();
 const PORT = 3000;
 
+// Allow requests from your frontend domain
+app.use(
+  cors({
+    origin: 'https://www.austinbarton.dev', // Your frontend domain
+  })
+);
+
+// Serve static files
 app.use(express.static('public'));
 
+// Endpoint to resolve TikTok short URL
 app.get('/resolve', async (req, res) => {
   const { url } = req.query;
 
