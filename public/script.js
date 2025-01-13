@@ -15,6 +15,8 @@ document.getElementById('resolveBtn').addEventListener('click', async () => {
     return;
   }
 
+  console.log('URL sent to server:', shortUrl);
+
   try {
     // Fetch resolved URL from the server
     const response = await fetch(`https://tiktok-url-resolver.onrender.com/resolve?url=${encodeURIComponent(shortUrl)}`);
