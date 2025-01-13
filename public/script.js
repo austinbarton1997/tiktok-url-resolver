@@ -18,17 +18,13 @@ document.getElementById('resolveBtn').addEventListener('click', async () => {
   }
 
   try {
-    // Use the deployed backend URL
     const response = await fetch(`${backendUrl}/resolve?url=${encodeURIComponent(shortUrl)}`);
     const data = await response.json();
 
     if (data.resolvedUrl) {
-      // Update the resolved URL element
       resolvedUrlElement.textContent = data.resolvedUrl;
-      resolvedUrlElement.href = data.resolvedUrl; // Make it clickable
+      resolvedUrlElement.href = data.resolvedUrl;
       resolvedUrlElement.classList.remove('hidden');
-
-      // Show the copy button and the result container
       copyButton.classList.remove('hidden');
       resultContainer.classList.remove('hidden');
     } else {
