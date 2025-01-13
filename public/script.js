@@ -17,7 +17,7 @@ document.getElementById('resolveBtn').addEventListener('click', async () => {
 
   try {
     // Fetch resolved URL from the server
-    const response = await fetch(`https://austinbarton.dev/resolve?url=${encodeURIComponent(shortUrl)}`);
+    const response = await fetch(`https://tiktok-url-resolver.onrender.com/resolve?url=${encodeURIComponent(shortUrl)}`);
     const data = await response.json();
 
     if (data.resolvedUrl) {
