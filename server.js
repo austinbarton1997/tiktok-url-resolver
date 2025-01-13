@@ -6,7 +6,11 @@ const app = express();
 const PORT = 3000;
 
 // Allow requests from your frontend domain
-app.use(cors());
+app.use(
+  cors({
+    origin: 'https://www.austinbarton.dev', // Your actual frontend domain
+  })
+);
 
 // Serve static files
 app.use(express.static('public'));
