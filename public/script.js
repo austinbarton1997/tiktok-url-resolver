@@ -1,5 +1,3 @@
-const backendUrl = 'https://www.austinbarton.dev'; // Replace with your Render backend URL
-
 document.getElementById('resolveBtn').addEventListener('click', async () => {
   const shortUrl = document.getElementById('shortUrl').value.trim();
   const resultContainer = document.getElementById('result-container');
@@ -18,13 +16,17 @@ document.getElementById('resolveBtn').addEventListener('click', async () => {
   }
 
   try {
-    const response = await fetch(`${backendUrl}/resolve?url=${encodeURIComponent(shortUrl)}`);
+    // Fetch resolved URL from the server
+    const response = await fetch(`https://austinbarton.dev/resolve?url=${encodeURIComponent(shortUrl)}`);
     const data = await response.json();
 
     if (data.resolvedUrl) {
+      // Update the resolved URL element
       resolvedUrlElement.textContent = data.resolvedUrl;
-      resolvedUrlElement.href = data.resolvedUrl;
+      resolvedUrlElement.href = data.resolvedUrl; // Make it clickable
       resolvedUrlElement.classList.remove('hidden');
+
+      // Show the copy button and the result container
       copyButton.classList.remove('hidden');
       resultContainer.classList.remove('hidden');
     } else {
