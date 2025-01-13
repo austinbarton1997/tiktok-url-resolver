@@ -1,3 +1,5 @@
+const backendUrl = 'http://www.austinbarton.dev'; // Replace with your Render backend URL
+
 document.getElementById('resolveBtn').addEventListener('click', async () => {
   const shortUrl = document.getElementById('shortUrl').value.trim();
   const resultContainer = document.getElementById('result-container');
@@ -16,8 +18,8 @@ document.getElementById('resolveBtn').addEventListener('click', async () => {
   }
 
   try {
-    // Fetch resolved URL from the server
-    const response = await fetch(`http://localhost:3000/resolve?url=${encodeURIComponent(shortUrl)}`);
+    // Use the deployed backend URL
+    const response = await fetch(`${backendUrl}/resolve?url=${encodeURIComponent(shortUrl)}`);
     const data = await response.json();
 
     if (data.resolvedUrl) {
