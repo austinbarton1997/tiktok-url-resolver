@@ -1,4 +1,4 @@
-const backendUrl = 'https://tiktok-url-resolver.onrender.com'; // Replace with your Render backend URL
+const backendUrl = 'https://www.austinbarton.dev'; // Replace with your Render backend URL
 
 document.getElementById('resolveBtn').addEventListener('click', async () => {
   const shortUrl = document.getElementById('shortUrl').value.trim();
